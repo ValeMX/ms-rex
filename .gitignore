@@ -19,6 +19,10 @@ helpsearch*/
 slprj/
 sccprj/
 
+# Project files
+resources/project/cache/
+.SimulinkProject/
+
 # Matlab code generation folders
 codegen/
 

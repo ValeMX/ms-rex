@@ -3,16 +3,19 @@ clear; close all; clc;
 root = 'C:\Users\valer\Desktop\Università\Image Processing\ms-rex\data\AOI_3_Paris';
 
 %% 1) Retrieve directory information
+
 d = dir(root);
 directoryTable = struct2table(d(:), 'AsArray', true);
 disp(directoryTable(:, {'name', 'isdir', 'bytes'}));
 
 %% 2) Retrieve files information
+
 msFiles = dir(fullfile(root, 'PS-MS', '*.tif'));
 gjFiles = dir(fullfile(root, 'geojson_roads', '*.geojson'));
 fprintf('PS-MS: %d tiles, geojson: %d files\n\n', numel(msFiles), numel(gjFiles));
 
 %% 3) Inspect first tile
+
 f = fullfile(msFiles(1).folder, msFiles(1).name);
 [A, R] = readgeoraster(f);
 info = geotiffinfo(f);
@@ -52,6 +55,7 @@ imshow(min(max(rescale(rgb, 0, 1, 'InputMin', lo, 'InputMax', hi), 0), 1));
 title('PS-MS: RGB (bands 5-3-2)');
 
 %% 4) Inspect first geojson file
+
 gj = fullfile(gjFiles(1).folder, gjFiles(1).name);
 s = jsondecode(fileread(gj));
 fprintf('\nSample geojson: %s\n', gjFiles(1).name);

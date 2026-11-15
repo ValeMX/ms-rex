@@ -1,0 +1,42 @@
+# SpaceNet 3 (SN3) Road Network Detection - Attribute Mapping
+dataset: SpaceNet 3 (AOI_3_Paris)
+
+paved:
+  1:
+    label: paved
+    description: Paved road surface (asphalt, concrete, cobblestone)
+  2:
+    label: unpaved
+    description: Unpaved road surface (dirt, gravel, unpaved track)
+  -1:
+    label: unknown
+    description: Unknown or missing value (NaN / 0 in GeoJSON)
+
+road_type:
+  1:
+    label: motorway
+    description: High-speed divided highway or expressway
+  2:
+    label: primary
+    description: Primary road / major arterial highway
+  3:
+    label: secondary
+    description: Secondary road / regional connector
+  4:
+    label: tertiary
+    description: Tertiary road / local neighborhood connector
+  5:
+    label: residential
+    description: Urban residential street
+  6:
+    label: unclassified
+    description: Minor unclassified road or local access way
+  7:
+    label: cart_track
+    description: Agricultural track or unpaved vehicle path
+  8:
+    label: footpath
+    description: Pedestrian footpath, cycleway, or non-motorized trail
+  -1:
+    label: unknown
+    description: Unknown or missing value (NaN in GeoJSON)
