@@ -65,6 +65,14 @@ function value = getvalue(p, name)
     %   value = GETVALUE(p, name) retrieves field 'name' from struct p and converts it
     %   to a numeric scalar if stored as char/string. Returns NaN if the field
     %   is missing, empty, non-scalar, or cannot be converted to a number.
+    %
+    %   Input:
+    %       p - The feature struct.
+    %       name - The name of the property to extract.
+    %
+    %   Output:
+    %       value - The extracted value, or NaN if not found or convertible.
+
     value = NaN;
 
     if isfield(p, name) && ~isempty(p.(name))
